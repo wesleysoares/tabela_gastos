@@ -1,0 +1,22 @@
+<div class='row'>
+  <table class="table">
+    <thead>
+     <tr>
+       <th>#</th>
+       <th>Data</th>
+       <th>Descrição</th>
+       <th>Valor</th>
+     </tr>
+   </thead>
+   <tbody>
+   <% @expenses.each do |expense| %>
+     <tr>
+        <td><%= expense.id %></td>
+        <td><%= expense.date.strftime('%d/%m/%Y') %></td>
+        <td><%= expense.description %></td>
+        <td><%= number_to_currency expense.price %></td>
+      </tr>
+   <% end %>
+   </tbody>
+  </table>
+</div>
