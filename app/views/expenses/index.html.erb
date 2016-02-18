@@ -5,7 +5,8 @@
        <th>#</th>
        <th>Data</th>
        <th>Descrição</th>
-       <th>Valor</th>
+       <th>Valor a pagar</th>
+       <th>Valor Total</th>
      </tr>
    </thead>
    <tbody>
@@ -14,7 +15,8 @@
         <td><%= expense.id %></td>
         <td><%= expense.date.strftime('%d/%m/%Y') %></td>
         <td><%= expense.description %></td>
-        <td><%= number_to_currency expense.price %></td>
+        <td><%= valor_formatado expense.total_divided %></td>
+        <td><%= valor_formatado expense.price %></td>
       </tr>
    <% end %>
    </tbody>

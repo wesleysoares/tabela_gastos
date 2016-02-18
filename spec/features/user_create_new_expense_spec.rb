@@ -13,7 +13,7 @@ feature 'User create a new expense' do
     click_on 'Salvar'
 
     expect(page).to have_content('Passagem de avião')
-    expect(page).to have_content('200.00')
+    expect(page).to have_content('200,00')
     expect(page).to have_content('01/02/2016  ')
   end
 
