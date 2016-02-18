@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User see total value divided by 4' do
   scenario 'successfully' do
-
     create(:expense)
 
     visit root_path
