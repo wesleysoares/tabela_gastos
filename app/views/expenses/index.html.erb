@@ -1,24 +1,33 @@
 <div class='row'>
-  <table class="table">
-    <thead>
-     <tr>
-       <th>#</th>
-       <th>Data</th>
-       <th>Descrição</th>
-       <th>Valor a pagar</th>
-       <th>Valor Total</th>
-     </tr>
-   </thead>
-   <tbody>
-   <% @expenses.each do |expense| %>
-     <tr>
-        <td><%= expense.id %></td>
-        <td><%= expense.date.strftime('%d/%m/%Y') %></td>
-        <td><%= expense.description %></td>
-        <td><%= valor_formatado expense.total_divided %></td>
-        <td><%= valor_formatado expense.price %></td>
-      </tr>
-   <% end %>
-   </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+       <tr class="active">
+         <th>#</th>
+         <th>Data</th>
+         <th>Descrição</th>
+         <th>Valor a pagar</th>
+         <th>Valor Total</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @expenses.each do |expense| %>
+        <tr>
+          <td><%= expense.id %></td>
+          <td><%= expense.date.strftime('%d/%m/%Y') %></td>
+          <td><%= expense.description %></td>
+          <td><%= valor_formatado expense.total_divided %></td>
+          <td><%= valor_formatado expense.price %></td>
+        </tr>
+      <% end %>
+      <% @expenses.find do |total| %>
+        <tr>
+          <td colspan="3"><strong>Totais</strong></td>
+          <td><strong><%= valor_formatado total.total_pay_divided %></strong></td>
+          <td><strong><%= valor_formatado total.total_pay %></strong></td>
+        </tr>
+      <% end %>
+     </tbody>
+    </table>
+  </div>
 </div>

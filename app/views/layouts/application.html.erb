@@ -10,13 +10,10 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
        <div class="navbar-header">
-         <a class="navbar-brand" href="/">Controle de Gastos</a>
+         <%= link_to "Controle de Gastos", root_path, {class:"navbar-brand"} %>
        </div>
       <ul class="nav navbar-nav">
-        <%= button_to 'Novo Gasto',
-            new_expense_path,
-            method: :get,
-            class: "btn btn-default navbar-btn" %>
+        <li><%= link_to 'Novo Gasto', new_expense_path, method: :get %></li>
       </ul>
     </div>
   </nav>
