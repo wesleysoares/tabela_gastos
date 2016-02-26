@@ -4,6 +4,7 @@
       <thead>
        <tr class="active">
          <th>#</th>
+         <th>Pago</th>
          <th>Data</th>
          <th>Descrição</th>
          <th>Valor a pagar</th>
@@ -14,6 +15,11 @@
        <% @expenses.each do |expense| %>
         <tr>
           <td><%= expense.id %></td>
+          <% if expense.paid? %>
+            <td><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></td>
+          <% else %>
+            <td></td>
+          <% end %>
           <td><%= expense.date.strftime('%d/%m/%Y') %></td>
           <td><%= expense.description %></td>
           <td><%= valor_formatado expense.total_divided %></td>

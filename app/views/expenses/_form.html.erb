@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8">
+  <%= simple_form_for @expense, html: { class: 'form-group' },
+  wrapper_mappings: {
+    check_boxes: :vertical_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :vertical_boolean
+  } do |f| %>
+  <%= f.input :date,
+              label: 'Data',
+              error: 'Informe uma data',
+              placeholder: 'dd/mm/aaaa',
+              as: :date,
+              html5: true %>
+  <%= f.input :description,
+              label: 'Descrição',
+              error: 'Informe uma descrição',
+              placeholder: 'Descrição do gasto' %>
+  <%= f.input :price,
+              label: 'Valor',
+              error: 'Informe um valor',
+              placeholder: 'Valor gasto' %>
+  <%= f.input :paid,
+              inline_label: 'Pago'%>
+  <%= f.submit 'Salvar', {class: "btn btn-primary"} %>
+  <% end %>
+  </div>
+</div>

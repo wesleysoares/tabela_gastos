@@ -20,4 +20,8 @@ class Expense < ActiveRecord::Base
     end
     total / 4
   end
+
+  def paid?
+    paid
+  end
 end

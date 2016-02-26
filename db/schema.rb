@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_216_235_124) do
-  create_table 'expenses', force: :cascade do |t|
-    t.string   'description'
-    t.float    'price'
-    t.date     'date'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+ActiveRecord::Schema.define(version: 20160226015805) do
+
+  create_table "expenses", force: :cascade do |t|
+    t.string   "description"
+    t.float    "price"
+    t.date     "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "paid"
   end
+
 end
