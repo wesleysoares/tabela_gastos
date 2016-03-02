@@ -3,5 +3,6 @@ FactoryGirl.define do
     date '01/02/2015'
     description 'Combustível'
     price 120.00
+    paid false
   end
 end

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 feature 'User controls expenses paid' do
   scenario 'successfully' do
-    expense = create(:expense, paid: true)
+    create(:expense, description: 'Passagem', paid: true)
+    expense = create(:expense)
 
     visit edit_expense_path(expense)
 
@@ -10,6 +11,14 @@ feature 'User controls expenses paid' do
 
     click_on 'Salvar'
 
-    expect(page).to have_css('glyphicon glyphicon-thumbs-up')
+    page.assert_selector('td#pay', count: 2)
+  end
+
+  scenario 'not expect paid' do
+    expense = create(:expense)
+
+    visit edit_expense_path(expense)
+
+    page.assert_selector('td#pay', count: 0)
   end
 end
