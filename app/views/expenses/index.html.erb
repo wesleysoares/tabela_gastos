@@ -9,6 +9,7 @@
          <th>Valor a pagar</th>
          <th>Valor Total</th>
          <th>Pago</th>
+         <th>&nbsp</th>
        </tr>
      </thead>
      <section id='expenses'>
@@ -25,6 +26,7 @@
             <% else %>
               <td>&nbsp</td>
             <% end %>
+            <td><%= button_to 'Editar', edit_expense_path(expense), method: :get, class: "btn btn-default" %></td>
           </tr>
         <% end %>
        </tbody>
@@ -36,6 +38,7 @@
              <td>&nbsp</td>
              <td><strong><%= valor_formatado total.total_pay_divided %></strong></td>
              <td><strong><%= valor_formatado total.total_pay %></strong></td>
+             <td>&nbsp</td>
              <td>&nbsp</td>
            </tr>
          <% end %>
