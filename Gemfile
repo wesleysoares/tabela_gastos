@@ -15,6 +15,7 @@ group :production do
 end
 group :test do
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
@@ -25,6 +26,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'sqlite3'
+  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
+  gem 'poltergeist'
 end
 
 group :development do
