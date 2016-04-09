@@ -5,7 +5,7 @@
   </div>
   <div class="modal-body">
   <ul class="errors"></ul>
-  Deletar o gasto <%= @expense.description %>?
+  Deletar o gasto: <%= @expense.description %>
   </div>
   <div class="modal-footer">
     <%= link_to "Sim", expense_path(@expense), method: :delete, remote: true, class: "btn btn-danger" %>
