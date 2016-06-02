@@ -1,0 +1,35 @@
+<div class="panel panel-default" align='right'>
+  <div class="panel-body">
+    <%= button_to 'Adicionar novo recebimento', new_receipt_path,
+                                      method: :get, class: "btn btn-success" %>
+  </div>
+  <div class=" table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @receipts.each do |r| %>
+        <tr>
+          <td><%= r.date.strftime('%d/%m/%Y') %></td>
+          <td><%= r.description %></td>
+          <td><%= valor_formatado r.value %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr class="success">
+          <td><strong>Total</strong></td>
+          <td>&nbsp</td>
+          <% @receipts.find do |t| %>
+          <td><strong><%= valor_formatado t.total_receipt %></strong></td>
+          <% end %>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

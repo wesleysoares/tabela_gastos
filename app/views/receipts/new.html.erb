@@ -1,0 +1,19 @@
+<%= simple_form_for @receipt, html: { class: 'form-group' },
+  wrapper_mappings: {
+  }  do |r| %>
+ <%= r.input :date,
+             label: 'Data',
+             placeholder: 'dd/mm/aaaa',
+             error: 'Informe uma data',
+             as: :date,
+             html5: true %>
+ <%= r.input :description,
+             label: 'Descrição',
+             placeholder: 'Informe uma descrição',
+             error: 'Informe uma descrição' %>
+ <%= r.input :value,
+            label: 'Valor',
+            placeholder: 'Informe um valor',
+            error: 'Informe um valor' %>
+ <%= r.submit 'Salvar', {class: "btn btn-primary"} %>
+<% end %>
