@@ -18,4 +18,23 @@ feature 'User create a new receipt' do
     expect(page).to have_content('Novo recebimento')
     expect(page).to have_content('R$: 150,00')
   end
+
+  scenario 'unsuccessfully' do
+    visit new_receipt_path
+
+    click_on 'Salvar'
+
+    expect(page).to have_content('Informe uma data')
+    expect(page).to have_content('Informe uma descrição')
+    expect(page).to have_content('Informe um valor')
+  end
+
+  scenario 'value total' do
+    create(:receipt)
+    create(:receipt, description: 'Novo recebimento 2', value: '100,00')
+
+    visit receipt_path
+
+    expect(page).to have_content('R$: 225,00')
+  end
 end

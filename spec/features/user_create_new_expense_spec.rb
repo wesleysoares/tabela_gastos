@@ -14,7 +14,7 @@ feature 'User create a new expense' do
 
     expect(page).to have_content('Passagem de avião')
     expect(page).to have_content('200,00')
-    expect(page).to have_content('01/02/2016  ')
+    expect(page).to have_content('01/02/2016')
   end
 
   scenario 'unsuccessfully' do
