@@ -29,6 +29,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'capybara-webkit'
   gem 'poltergeist'
+  gem 'simplecov', require: false
+  gem 'shoulda-matchers', require: false
+  gem 'faker'
 end
 
 group :development do
