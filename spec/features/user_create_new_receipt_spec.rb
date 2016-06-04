@@ -30,8 +30,9 @@ feature 'User create a new receipt' do
   end
 
   scenario 'value total' do
-    receipt1 = create(:receipt)
-    receipt2 = create(:receipt, description: 'Novo recebimento 2', value: '100,00')
+
+    create(:receipt)
+    create(:receipt, description: 'Novo recebimento 2', value: '100,00')
 
     visit receipt_path
 

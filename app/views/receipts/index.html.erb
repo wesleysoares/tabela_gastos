@@ -22,13 +22,13 @@
         <% end %>
       </tbody>
       <tfoot>
-        <tr class="success">
-          <td><strong>Total</strong></td>
-          <td>&nbsp</td>
-          <% @receipts.find do |t| %>
-          <td><strong><%= valor_formatado t.total_receipt %></strong></td>
-          <% end %>
-        </tr>
+        <% @receipts.find do |t| %>
+          <tr class="success">
+            <td><strong>Total</strong></td>
+            <td>&nbsp</td>
+            <td><strong><%= valor_formatado t.total_receipt %></strong></td>
+          </tr>
+        <% end %>
       </tfoot>
     </table>
   </div>
