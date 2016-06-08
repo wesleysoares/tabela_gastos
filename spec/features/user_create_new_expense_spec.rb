@@ -26,5 +26,5 @@ feature 'User create a new expense' do
     expect(page).to have_content('Informe uma data')
     expect(page).to have_content('Informe uma descrição')
     expect(page).to have_content('Informe um valor')
-  end  
+  end
 end

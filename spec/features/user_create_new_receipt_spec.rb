@@ -30,7 +30,6 @@ feature 'User create a new receipt' do
   end
 
   scenario 'value total' do
-
     create(:receipt)
     create(:receipt, description: 'Novo recebimento 2', value: '100,00')
 

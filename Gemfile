@@ -31,7 +31,6 @@ group :development, :test do
   gem 'poltergeist'
   gem 'simplecov', require: false
   gem 'shoulda-matchers', require: false
-  gem 'faker'
 end
 
 group :development do
