@@ -10,17 +10,24 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
        <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
          <%= link_to "Controle de Gastos", root_path, {class:"navbar-brand"} %>
        </div>
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Novo Gasto', new_expense_path, method: :get %></li>
-        <li><%= link_to 'Recebimentos', receipt_path %></li>
-      </ul>
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+          <li><%= link_to 'Novo Gasto', new_expense_path, method: :get %></li>
+          <li><%= link_to 'Recebimentos', receipt_path %></li>
+        </ul>
+      </div>
     </div>
   </nav>
   <div class="container">
     <div class='row'>
-      <div class="col-xs-12 col-sm-6 col-md-12">
+      <div class="col-xs-12 col-sm-12 col-md-12">
         <%= yield %>
       </div>
     </div>
