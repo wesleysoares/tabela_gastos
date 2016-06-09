@@ -16,6 +16,19 @@ class ReceiptsController < ApplicationController
     end
   end
 
+  def edit
+    @receipt = Receipt.find(params[:id])
+  end
+
+  def update
+    @receipt = Receipt.find(params[:id])
+    if @receipt.update(receipt_params)
+      redirect_to receipt_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def receipt_params

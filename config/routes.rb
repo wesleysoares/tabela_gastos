@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     get "delete"
   end
 
-  resources :receipts, only: [:new, :create]
+  resources :receipts, only: [:new, :create, :edit, :update]
 end

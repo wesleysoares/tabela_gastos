@@ -13,11 +13,12 @@
         </tr>
       </thead>
       <tbody>
-        <% @receipts.each do |r| %>
+        <% @receipts.each do |receipt| %>
         <tr>
-          <td><%= r.date.strftime('%d/%m/%Y') %></td>
-          <td><%= r.description %></td>
-          <td><%= valor_formatado r.value %></td>
+          <td><%= receipt.date.strftime('%d/%m/%Y') %></td>
+          <td><%= receipt.description %></td>
+          <td><%= valor_formatado receipt.value %></td>
+          <td><%= link_to 'Editar', edit_receipt_path(receipt), class: "btn btn-default" %></td>
         </tr>
         <% end %>
       </tbody>
