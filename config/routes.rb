@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   get 'receipt', to: 'receipts#index'
 
+  patch 'receipt.:id' => 'receipts#update'
+
   resources :expenses, only: [:new, :create, :edit, :update, :destroy] do
     get "delete"
   end
 
-  resources :receipts, only: [:new, :create, :edit, :update]
+  resources :receipts
 end
