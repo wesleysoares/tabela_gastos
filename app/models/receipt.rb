@@ -1,5 +1,11 @@
 class Receipt < ActiveRecord::Base
-  validates :date, :description, :value, presence: true
+  validates_presence_of :date,
+                        :description,
+                        :value,
+                        message: "Campo obrigatório"
+  validates_length_of :description,
+                      maximum: 50,
+                      message: "Tamanho máximo de 50 caracteres"
 
   def total_receipt
     total = 0
