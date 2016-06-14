@@ -24,9 +24,7 @@ feature 'User create a new receipt' do
 
     click_on 'Salvar'
 
-    expect(page).to have_content('Informe uma data')
-    expect(page).to have_content('Informe uma descrição')
-    expect(page).to have_content('Informe um valor')
+    expect(page).to have_content('Campo obrigatório', count: 3)
   end
 
   scenario 'value total' do
