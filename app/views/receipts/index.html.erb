@@ -10,7 +10,8 @@
           <th>Data</th>
           <th>Descrição</th>
           <th>Valor</th>
-          <th>Ações</th>
+          <th>&nbsp</th>
+          <th>&nbsp</th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +21,7 @@
           <td><%= receipt.description %></td>
           <td><%= valor_formatado receipt.value %></td>
           <td><%= link_to 'Editar', edit_receipt_path(receipt), class: "btn btn-default" %></td>
+          <td><%= link_to 'Excluir', receipt, method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}, class: "btn btn-danger" %></td>
         </tr>
         <% end %>
       </tbody>
@@ -29,6 +31,7 @@
             <td><strong>Total</strong></td>
             <td>&nbsp</td>
             <td><strong><%= valor_formatado t.total_receipt %></strong></td>
+            <th>&nbsp</th>
             <th>&nbsp</th>
           </tr>
         <% end %>
