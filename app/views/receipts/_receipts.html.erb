@@ -1,0 +1,35 @@
+<div class=" table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr class="active">
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>&nbsp</th>
+        <th>&nbsp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @receipts.each do |receipt| %>
+      <tr>
+        <td><%= receipt.date.strftime('%d/%m/%Y') %></td>
+        <td><%= receipt.description %></td>
+        <td><%= valor_formatado receipt.value %></td>
+        <td><%= link_to 'Editar', edit_receipt_path(receipt), class: "btn btn-default" %></td>
+        <td><%= link_to 'Excluir', receipt_delete_path(receipt), remote: true, class: "btn btn-danger" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <% @receipts.find do |t| %>
+        <tr class="success">
+          <td><strong>Total</strong></td>
+          <td>&nbsp</td>
+          <td><strong><%= valor_formatado t.total_receipt %></strong></td>
+          <th>&nbsp</th>
+          <th>&nbsp</th>
+        </tr>
+      <% end %>
+    </tfoot>
+  </table>
+</div>

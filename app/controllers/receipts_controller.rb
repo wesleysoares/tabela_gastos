@@ -29,10 +29,14 @@ class ReceiptsController < ApplicationController
     end
   end
 
+  def delete
+    @receipt = Receipt.find(params[:receipt_id])
+  end
+
   def destroy
+    @receipts = Receipt.all
     @receipt = Receipt.find(params[:id])
     @receipt.destroy
-    redirect_to receipt_path
   end
 
   private
