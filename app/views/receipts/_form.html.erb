@@ -10,7 +10,9 @@
              label: 'Descrição',
              placeholder: 'Informe uma descrição' %>
  <%= r.input :value,
-            label: 'Valor',
-            placeholder: 'Informe um valor' %>
+             label: 'Valor',
+             placeholder: 'Informe um valor' %>
+ <%= r.input :paid,
+             inline_label: 'Pago' %>
  <%= r.submit 'Salvar', {class: "btn btn-primary"} %>
 <% end %>

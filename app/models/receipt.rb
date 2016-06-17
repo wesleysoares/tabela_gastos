@@ -14,4 +14,8 @@ class Receipt < ActiveRecord::Base
     end
     total
   end
+
+  def paid?
+    paid
+  end
 end

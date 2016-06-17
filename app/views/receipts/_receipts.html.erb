@@ -5,6 +5,7 @@
         <th>Data</th>
         <th>Descrição</th>
         <th>Valor</th>
+        <th>Pago</th>
         <th>&nbsp</th>
         <th>&nbsp</th>
       </tr>
@@ -15,6 +16,11 @@
         <td><%= receipt.date.strftime('%d/%m/%Y') %></td>
         <td><%= receipt.description %></td>
         <td><%= valor_formatado receipt.value %></td>
+        <% if receipt.paid? %>
+          <td id=paid ><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></td>
+        <% else %>
+          <td>&nbsp</td>
+        <% end %>
         <td><%= link_to 'Editar', edit_receipt_path(receipt), class: "btn btn-default" %></td>
         <td><%= link_to 'Excluir', receipt_delete_path(receipt), remote: true, class: "btn btn-danger" %></td>
       </tr>
@@ -26,6 +32,7 @@
           <td><strong>Total</strong></td>
           <td>&nbsp</td>
           <td><strong><%= valor_formatado t.total_receipt %></strong></td>
+          <th>&nbsp</th>
           <th>&nbsp</th>
           <th>&nbsp</th>
         </tr>
