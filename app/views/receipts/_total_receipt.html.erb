@@ -1,0 +1,5 @@
+<% @receipts.find do |t| %>
+  <h4>Pago</h4><p><%= valor_formatado t.total_paid %></p>
+  <h4>Falta</h4><p><%= valor_formatado t.total_not_paid %></p>
+  <h4>Total</h4><p><%= valor_formatado t.total_receipt %></p>
+<% end %>

@@ -18,4 +18,20 @@ class Receipt < ActiveRecord::Base
   def paid?
     paid
   end
+
+  def total_paid
+    total = 0
+    Receipt.all.each do |receipt|
+      total += receipt.value if receipt.paid?
+    end
+    total
+  end
+
+  def total_not_paid
+    total = 0
+    Receipt.all.each do |receipt|
+      total += receipt.value unless receipt.paid?
+    end
+    total
+  end
 end

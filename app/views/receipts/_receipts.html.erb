@@ -26,17 +26,5 @@
       </tr>
       <% end %>
     </tbody>
-    <tfoot>
-      <% @receipts.find do |t| %>
-        <tr class="success">
-          <td><strong>Total</strong></td>
-          <td>&nbsp</td>
-          <td><strong><%= valor_formatado t.total_receipt %></strong></td>
-          <th>&nbsp</th>
-          <th>&nbsp</th>
-          <th>&nbsp</th>
-        </tr>
-      <% end %>
-    </tfoot>
   </table>
 </div>
