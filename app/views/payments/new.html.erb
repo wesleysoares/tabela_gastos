@@ -1,0 +1,6 @@
+<%= simple_form_for @payment do |payment| %>
+ <%= payment.input :date, label: 'Data', html5: true %>
+ <%= payment.input :description, label: 'Descrição' %>
+ <%= payment.input :value, label: 'Valor'%>
+ <%= payment.submit 'Salvar' %>
+<% end %>
