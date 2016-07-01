@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     get 'delete'
   end
 
-  resources :payments
+  resources :payments, only: [:new, :create]
 end

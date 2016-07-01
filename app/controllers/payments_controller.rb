@@ -1,5 +1,4 @@
 class PaymentsController < ApplicationController
-
   def index
     @payments = Payment.all
   end
@@ -10,8 +9,11 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = Payment.new(payments_params)
-    @payment.save
-    redirect_to payment_path
+    if @payment.save
+      redirect_to payment_path
+    else
+      render 'new'
+    end
   end
 
   private
@@ -19,5 +21,4 @@ class PaymentsController < ApplicationController
   def payments_params
     params.require(:payment).permit(:date, :description, :value)
   end
-
 end
