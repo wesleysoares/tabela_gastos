@@ -5,6 +5,7 @@
         <th>Data</th>
         <th>Descrição</th>
         <th>Valor</th>
+        <th>&nbsp</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
         <td><%= payment.date.strftime('%d/%m/%Y') %></td>
         <td><%= payment.description %></td>
         <td><%= valor_formatado payment.value %></td>
+        <td><%= link_to 'Editar', edit_payment_path(payment), class: 'btn btn-default'%></td>
       </tr>
       <% end %>
     </tbody>

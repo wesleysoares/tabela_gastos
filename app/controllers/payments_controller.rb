@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+  before_action :find_payment, only: [:edit, :update]
+
   def index
     @payments = Payment.all
   end
@@ -16,9 +18,24 @@ class PaymentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @payment.update(payments_params)
+      redirect_to payment_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def payments_params
     params.require(:payment).permit(:date, :description, :value)
+  end
+
+  def find_payment
+    @payment = Payment.find(params[:id])
   end
 end

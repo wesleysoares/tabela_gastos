@@ -1,4 +1,6 @@
 class ReceiptsController < ApplicationController
+  before_action :find_receipts, only: [:edit, :update]
+
   def index
     @receipts = Receipt.all
   end
@@ -17,11 +19,9 @@ class ReceiptsController < ApplicationController
   end
 
   def edit
-    @receipt = Receipt.find(params[:id])
   end
 
   def update
-    @receipt = Receipt.find(params[:id])
     if @receipt.update(receipt_params)
       redirect_to receipt_path
     else
@@ -43,5 +43,9 @@ class ReceiptsController < ApplicationController
 
   def receipt_params
     params.require(:receipt).permit(:date, :description, :value, :paid)
+  end
+
+  def find_receipts
+    @receipt = Receipt.find(params[:id])
   end
 end
