@@ -1,18 +1,26 @@
-<%= simple_form_for @receipt, html: { class: 'form-group' },
-  wrapper_mappings: {
-  }  do |r| %>
- <%= r.input :date,
-             label: 'Data',
-             placeholder: 'dd/mm/aaaa',
-             as: :date,
-             html5: true %>
- <%= r.input :description,
-             label: 'Descrição',
-             placeholder: 'Informe uma descrição' %>
- <%= r.input :value,
-             label: 'Valor',
-             placeholder: 'Informe um valor' %>
- <%= r.input :paid,
-             inline_label: 'Pago' %>
- <%= r.submit 'Salvar', {class: "btn btn-primary"} %>
+<%= simple_form_for @receipt do |receipt| %>
+<div class="row">
+  <div class="col-md-6">
+   <%= receipt.input :date, label: 'Data',
+               placeholder: 'dd/mm/aaaa',
+               as: :date,
+               html5: true %>
+   <%= receipt.input :description,
+               label: 'Descrição',
+               placeholder: 'Informe uma descrição' %>
+   <%= receipt.input :value,
+               label: 'Valor',
+               placeholder: 'Informe um valor' %>
+   <%= receipt.input :paid,
+               inline_label: 'Pago' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-3">
+    <%= receipt.submit 'Salvar', class: "btn btn-primary btn-block" %>
+ </div>
+ <div class="col-xs-12 col-sm-6 col-md-3">
+   <%= link_to 'Cancelar', receipt_path, {class: "btn btn-default btn-block"} %>
+ </div>
+</div>
 <% end %>

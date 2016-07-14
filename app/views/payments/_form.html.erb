@@ -1,14 +1,19 @@
 <%= simple_form_for @payment do |payment| %>
 <div class="row">
   <div class="col-md-6">
-    <%= payment.input :date, label: 'Data', as: :date, html5: true %>
+    <%= payment.input :date, label: 'Data',
+                      placeholder: 'dd/mm/aaaa',
+                      as: :date,
+                      html5: true %>
     <%= payment.input :description, label: 'Descrição' %>
     <%= payment.input :value, label: 'Valor'%>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
-    <%= payment.button :submit, 'Salvar', class: 'btn btn-primary btn-block' %>
+  <div class="col-xs-12 col-sm-6 col-md-3">
+    <%= payment.submit 'Salvar', class: 'btn btn-primary btn-block' %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-3">
     <%= link_to 'Cancelar', payment_path, class: 'btn btn-default btn-block' %>
   </div>
 </div>
