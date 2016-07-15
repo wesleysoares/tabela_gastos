@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User create a new payments' do
   scenario 'successfully' do
-    visit root_path
+    visit payment_path
 
     click_on 'Pagamentos'
 

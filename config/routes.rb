@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'expenses#index'
-
   get 'receipt', to: 'receipts#index'
   get 'payment', to: 'payments#index'
 
@@ -9,10 +7,6 @@ Rails.application.routes.draw do
 
   patch 'payment.:id', to: 'payments#update'
   delete 'payment.:id', to: 'payments#destroy'
-
-  resources :expenses, only: [:new, :create, :edit, :update, :destroy] do
-    get "delete"
-  end
 
   resources :receipts, only: [:new, :create, :edit, :update, :destroy] do
     get 'delete'

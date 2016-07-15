@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User create a new receipt' do
   scenario 'successfully' do
-    visit root_path
+    visit receipt_path
 
     click_on 'Recebimentos'
 

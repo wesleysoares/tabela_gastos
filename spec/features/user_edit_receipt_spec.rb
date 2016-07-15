@@ -4,7 +4,7 @@ feature 'User edit a receipt' do
   scenario 'successfully' do
     create(:receipt)
 
-    visit root_path
+    visit receipt_path
 
     click_on 'Recebimentos'
 

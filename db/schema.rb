@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160629005252) do
 
-  create_table "expenses", force: :cascade do |t|
-    t.string   "description"
-    t.float    "price"
-    t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.boolean  "paid"
-  end
-
   create_table "payments", force: :cascade do |t|
     t.date     "date"
     t.string   "description"
