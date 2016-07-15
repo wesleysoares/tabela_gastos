@@ -29,6 +29,16 @@ class PaymentsController < ApplicationController
     end
   end
 
+  def delete
+    @payment = Payment.find(params[:payment_id])
+  end
+
+  def destroy
+    @payments = Payment.all
+    @payment = Payment.find(params[:id])
+    @payment.destroy
+  end
+
   private
 
   def payments_params

@@ -6,6 +6,7 @@
         <th>Descrição</th>
         <th>Valor</th>
         <th>&nbsp</th>
+        <th>&nbsp</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <td><%= payment.description %></td>
         <td><%= valor_formatado payment.value %></td>
         <td><%= link_to 'Editar', edit_payment_path(payment), class: 'btn btn-default'%></td>
+        <td><%= link_to 'Excluir', payment_delete_path(payment), remote:true, class: 'btn btn-danger'%></td>
       </tr>
       <% end %>
     </tbody>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete 'receipt.:id', to: 'receipts#destroy'
 
   patch 'payment.:id', to: 'payments#update'
+  delete 'payment.:id', to: 'payments#destroy'
 
   resources :expenses, only: [:new, :create, :edit, :update, :destroy] do
     get "delete"
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
     get 'delete'
   end
 
-  resources :payments, only: [:new, :create, :edit, :update]
+  resources :payments, only: [:new, :create, :edit, :update, :destroy]do
+    get 'delete'
+  end
 end

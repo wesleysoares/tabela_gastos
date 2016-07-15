@@ -1,0 +1,13 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <ul class="errors"></ul>
+      Tem certeza que deseja deletar o pagamento
+        <b><%= @payment.description %></b>?
+    </div>
+    <div class="modal-footer">
+      <%= link_to "Sim", payment_path(@payment), method: :delete, remote: true, class: "btn btn-danger" %>
+      <%= link_to "Cancelar", "#", class: "btn btn-default", data: { dismiss: "modal" } %>
+    </div>
+  </div>
+</div>
