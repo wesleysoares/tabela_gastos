@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'payments#index'
+
   get 'receipt', to: 'receipts#index'
   get 'payment', to: 'payments#index'
 
