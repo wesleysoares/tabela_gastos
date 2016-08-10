@@ -7,4 +7,7 @@ class Payment < ActiveRecord::Base
   validates_length_of :description,
                       maximum: 50,
                       message: 'Tamanho máximo de 50 caracteres'
+
+  def paid?
+  end
 end

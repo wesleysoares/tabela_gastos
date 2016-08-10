@@ -4,8 +4,8 @@
       <tr class="active">
         <th>Data</th>
         <th>Descrição</th>
+        <th>Pago</th>
         <th>Valor</th>
-        <th>&nbsp</th>
         <th>&nbsp</th>
       </tr>
     </thead>
@@ -15,6 +15,11 @@
         <td><%= payment.date.strftime('%d/%m/%Y') %></td>
         <td><%= payment.description %></td>
         <td><%= valor_formatado payment.value %></td>
+        <% if payment.paid %>
+          <td><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></td>
+          <% else %>
+          <td>&nbsp</td>
+        <% end %>
         <td><%= link_to 'Editar', edit_payment_path(payment), class: 'btn btn-default'%></td>
         <td><%= link_to 'Excluir', payment_delete_path(payment), remote:true, class: 'btn btn-danger'%></td>
       </tr>

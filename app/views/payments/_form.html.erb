@@ -6,6 +6,7 @@
                       as: :date,
                       html5: true %>
     <%= payment.input :description, label: 'Descrição' %>
+    <%= payment.input :paid, wrapper: :vertical_boolean, label: 'Pago' %>
     <%= payment.input :value, label: 'Valor'%>
   </div>
 </div>
