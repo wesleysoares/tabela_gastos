@@ -6,7 +6,7 @@
         <th>Descrição</th>
         <th>Valor</th>
         <th>Pago</th>
-        <th>&nbsp</th>
+        <th>Ações</th>
         <th>&nbsp</th>
       </tr>
     </thead>
@@ -17,12 +17,22 @@
         <td><%= payment.description %></td>
         <td><%= valor_formatado payment.value %></td>
         <% if payment.paid %>
-          <td><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></td>
+          <td><span class="glyphicon glyphicon-check" aria-hidden="true"></span></td>
           <% else %>
           <td>&nbsp</td>
         <% end %>
-        <td><%= link_to 'Editar', edit_payment_path(payment), class: 'btn btn-default'%></td>
-        <td><%= link_to 'Excluir', payment_delete_path(payment), remote:true, class: 'btn btn-danger'%></td>
+        <td><%= link_to '', edit_payment_path(payment),
+                              class: 'btn btn-default glyphicon glyphicon-edit',
+                              title: 'Editar pagamento',
+                              'data-toggle' => 'tooltip',
+                              'data-placement' => 'right' %>
+        <%= link_to '', payment_delete_path(payment), remote:true,
+                              class: 'btn btn-danger glyphicon glyphicon-trash',
+                              title: 'Excluir pagamento',
+                              'data-toggle' => 'tooltip',
+                              'data-placement' => 'right'%>
+      </td>
+        <td>&nbsp</td>
       </tr>
       <% end %>
     </tbody>

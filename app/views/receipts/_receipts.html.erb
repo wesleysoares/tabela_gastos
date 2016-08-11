@@ -17,12 +17,20 @@
         <td><%= receipt.description %></td>
         <td><%= valor_formatado receipt.value %></td>
         <% if receipt.paid? %>
-          <td id=paid ><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></td>
+          <td id=paid ><span class="glyphicon glyphicon-check" aria-hidden="true"></span></td>
         <% else %>
           <td>&nbsp</td>
         <% end %>
-        <td><%= link_to 'Editar', edit_receipt_path(receipt), class: "btn btn-default" %></td>
-        <td><%= link_to 'Excluir', receipt_delete_path(receipt), remote: true, class: "btn btn-danger" %></td>
+        <td><%= link_to '', edit_receipt_path(receipt),
+                              class: 'btn btn-default glyphicon glyphicon-edit',
+                              title: 'Editar recebimento',
+                              'data-toggle' => 'tooltip',
+                              'data-placement' => 'right' %>
+        <%= link_to '', receipt_delete_path(receipt), remote: true,
+                              class: 'btn btn-danger glyphicon glyphicon-trash',
+                              title: 'Excluir recebimento',
+                              'data-toggle' => 'tooltip',
+                              'data-placement' => 'right'%></td>
       </tr>
       <% end %>
     </tbody>

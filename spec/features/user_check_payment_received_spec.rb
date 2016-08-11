@@ -7,13 +7,13 @@ feature 'User check payment received' do
 
     visit payment_path
 
-    click_on('Editar', match: :first)
+    find('a.btn.btn-default.glyphicon.glyphicon-edit', match: :first).click
 
     check('Pago')
 
     click_on 'Salvar'
 
-    expect(page).to have_css('span.glyphicon.glyphicon-thumbs-up', count: 2)
+    expect(page).to have_css('span.glyphicon.glyphicon-check', count: 2)
   end
 
   scenario 'create payment and check paid' do
@@ -28,7 +28,7 @@ feature 'User check payment received' do
 
     click_on 'Salvar'
 
-    expect(page).to have_css('span.glyphicon-thumbs-up', count: 1)
+    expect(page).to have_css('span.glyphicon.glyphicon-check', count: 1)
   end
 
   scenario 'uncheck paid' do
@@ -37,12 +37,12 @@ feature 'User check payment received' do
 
     visit payment_path
 
-    click_on('Editar', match: :first)
+    find('a.btn.btn-default.glyphicon.glyphicon-edit', match: :first).click
 
     uncheck('Pago')
 
     click_on 'Salvar'
 
-    expect(page).to have_css('span.glyphicon-thumbs-up', count: 1)
+    expect(page).to have_css('span.glyphicon.glyphicon-check', count: 1)
   end
 end

@@ -6,7 +6,7 @@ feature 'User delete a receipt' do
 
     visit receipt_path
 
-    click_on 'Excluir'
+    find('a.btn.btn-danger.glyphicon.glyphicon-trash').click
 
     within('#receipt-modal') do
       click_link('Sim')

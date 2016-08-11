@@ -8,7 +8,7 @@ feature 'User edit a receipt' do
 
     click_on 'Recebimentos'
 
-    click_on 'Editar'
+    find('a.btn.btn-default.glyphicon.glyphicon-edit').click
 
     fill_in 'Data', with: '08/05/2016'
     fill_in 'Descrição', with: 'Descrição Editada'
@@ -26,7 +26,7 @@ feature 'User edit a receipt' do
 
     visit receipt_path
 
-    click_on 'Editar'
+    find('a.btn.btn-default.glyphicon.glyphicon-edit').click
 
     fill_in 'Data', with: ''
     fill_in 'Descrição', with: ''

@@ -6,7 +6,7 @@ feature 'User edit a payment' do
 
     visit payment_path
 
-    click_on 'Editar'
+    find('a.btn.btn-default.glyphicon.glyphicon-edit', match: :first).click
 
     fill_in 'Data', with: '10/07/2016'
     fill_in 'Descrição', with: 'Nova descrição'
@@ -24,7 +24,7 @@ feature 'User edit a payment' do
 
     visit payment_path
 
-    click_on 'Editar'
+    find('a.btn.btn-default.glyphicon.glyphicon-edit', match: :first).click
 
     fill_in 'Data', with: ''
     fill_in 'Descrição', with: ''

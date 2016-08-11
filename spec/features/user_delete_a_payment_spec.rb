@@ -6,7 +6,7 @@ feature 'User delete a payment' do
 
     visit payment_path
 
-    click_on 'Excluir'
+    find('a.btn.btn-danger.glyphicon.glyphicon-trash').click
 
     within('#payment-modal') do
       click_on('Sim')
