@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User see total_value' do
-  scenario 'sucessufuly' do
+  scenario 'successfully' do
     create(:receipt)
     create(:receipt, value: '100,00', paid: true)
 

@@ -5,11 +5,23 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-10">
     <div class="panel panel-default">
       <section id='payments'>
         <%= render 'payments' %>
       </section>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>Totais</strong>
+      </div>
+      <div class="panel-body">
+        <section id='total_payments'>
+          <%= render 'total_payment' %>
+        </section>
+      </div>
     </div>
   </div>
 </div>

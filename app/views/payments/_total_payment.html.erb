@@ -1,0 +1,5 @@
+<% @payments.find do |payment| %>
+  <h4>Pago</h4><p><%= valor_formatado payment.total_paid %></p>
+  <h4>Falta</h4><p><%= valor_formatado payment.total_not_paid %></p>
+  <h4>Total</h4><p><%= valor_formatado payment.total_payment %></p>
+<% end %>

@@ -9,5 +9,30 @@ class Payment < ActiveRecord::Base
                       message: 'Tamanho máximo de 50 caracteres'
 
   def paid?
+    paid
+  end
+
+  def total_payment
+    total = 0
+    Payment.all.each do |payment|
+      total += payment.value
+    end
+    total
+  end
+
+  def total_paid
+    total = 0
+    Payment.all.each do |payment|
+      total += payment.value if payment.paid?
+    end
+    total
+  end
+
+  def total_not_paid
+    total = 0
+    Payment.all.each do |payment|
+      total += payment.value unless payment.paid?
+    end
+    total
   end
 end
